@@ -32,3 +32,6 @@ body {
 }
 
 /* Additional global styles */
+.scale {
+    transform: scale(0.75);
+}

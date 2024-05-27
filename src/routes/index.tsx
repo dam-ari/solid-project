@@ -38,7 +38,7 @@ export default function Home() {
       <Counter />
       <p class="text-center text-grey mt-4 ">Visit me</p>
       <section class="relative flex flex-col items-center justify-end h-full pb-8">
-        <div class="flex space-x-4 p-4 bg-white bg-opacity-50 rounded-lg shadow-lg fixed-bottom">
+        <div class="flex space-x-4 p-2 bg-white bg-opacity-50 rounded-lg shadow-lg fixed-bottom scale">
           <For each={modals}>
             {(modalProps) => (
               <IconBox
