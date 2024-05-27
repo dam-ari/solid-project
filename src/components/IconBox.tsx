@@ -10,7 +10,10 @@ const IconBox: Component<IconBoxProps> = ({ icon, modalId, onClick }) => {
   return (
     <div
       class="flex justify-center items-center w-12 h-12 rounded-lg text-white text-2xl p-2 cursor-pointer transition-transform transform hover:scale-110 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
-      onClick={() => onClick(modalId)}
+      onClick={() => {
+        console.log(`IconBox clicked: ${modalId}`);
+        onClick(modalId);
+      }}
     >
       <svg
         class="w-6 h-6"
