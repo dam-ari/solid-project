@@ -4,7 +4,7 @@
 
 
 body {
-    /* background-color: antiquewhite; */
+    background-color: antiquewhite;
     background-image: url('https://picsum.photos/1200/800');
     background-size: cover;
     backface-visibility: 0.5;
@@ -64,7 +64,10 @@ body {
     padding: 1rem;
     overflow-y: auto;
     max-height: calc(100% - 2.5rem);
-    background-color:  #c4c4c4a3;
+    height: calc(100% - 2.5rem);
+    background-color:  #d5dfe0a3;
+    /* background-color:  #c4c4c4a3; */
+    /* background-color:  rgba(250, 235, 215, 0.517); */
      /*  rgba(250, 235, 215, 0.517); */
   }
   
@@ -104,7 +107,7 @@ body {
   }
   
   .modal-content::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.425);
     backdrop-filter: blur(10px);
     border-radius: 10px;
   }
@@ -116,7 +119,7 @@ body {
   }
   
   .modal-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(180, 180, 180, 0.8);
+    background: rgba(167, 159, 159, 0.8);
   }
   
   .prevent-background-scroll {
