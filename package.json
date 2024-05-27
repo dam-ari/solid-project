@@ -13,12 +13,12 @@
     "@solidjs/router": "^0.13.3",
     "@solidjs/start": "^1.0.0",
     "solid-js": "^1.8.17",
-    "swiper": "^7.4.1",
     "vinxi": "^0.3.11",
+    "swiper": "^7.4.1",
     "vite": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/node": "^18.0.0",
     "@types/swiper": "^6.0.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
