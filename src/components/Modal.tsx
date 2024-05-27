@@ -14,6 +14,12 @@ const Modal: Component<ModalProps> = (props) => {
   const toggleMinimize = () => {
     setIsMinimized(!isMinimized());
   };
+  const toggleMaximize = () => {
+    if (props.isMaximized) {
+      setIsMinimized(false);
+    }
+    props.toggleMaximize();
+  };
 
   return (
     <div
@@ -23,15 +29,11 @@ const Modal: Component<ModalProps> = (props) => {
       } ${isMinimized() ? "minimized" : ""}`}
     >
       <div class="modal-header">
-        <button class="button" onClick={props.closeModal}>
-          ✖
-        </button>
-        <button class="button" onClick={toggleMinimize}>
-          ➖
-        </button>
-        <button class="button" onClick={props.toggleMaximize}>
-          ⬜
-        </button>
+        <div class="mac-buttons">
+          <div class="mac-button close" onClick={props.closeModal}></div>
+          <div class="mac-button minimize" onClick={toggleMinimize}></div>
+          <div class="mac-button maximize" onClick={toggleMaximize}></div>
+        </div>
       </div>
       <div class="modal-content">{props.children}</div>
     </div>

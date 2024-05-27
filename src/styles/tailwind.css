@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:host {
-    top: 10;
-    left: 10;
-
-}
-
 /* Ensure the buttons are fixed to the bottom */
 .fixed-bottom {
     position: fixed;
@@ -38,7 +32,7 @@
   
   .modal.minimized {
     width: 40%;
-    height: 20%;
+    height: 5%;
   }
   
   .modal.maximized {
@@ -52,7 +46,7 @@
   
   .modal-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 0.5rem;
   }
   
@@ -60,6 +54,36 @@
     padding: 1rem;
     overflow-y: auto;
     max-height: calc(100% - 2.5rem);
+  }
+  
+  /* macOS-style buttons */
+  .mac-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .mac-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .mac-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .mac-button.close {
+    background: #ff5f57;
+  }
+  
+  .mac-button.minimize {
+    background: #ffbd2e;
+  }
+  
+  .mac-button.maximize {
+    background: #28c840;
   }
   
   /* Custom scrollbar */
@@ -85,24 +109,5 @@
   
   .prevent-background-scroll {
     overflow: hidden;
-  }
-  
-  /* Add hover and active states for buttons */
-  .button {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .button:hover {
-    background: rgba(255, 255, 255, 0.8);
-  }
-  
-  .button:active {
-    background: rgba(255, 255, 255, 0.9);
   }
   

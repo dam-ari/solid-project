@@ -25,7 +25,11 @@ export default function Home() {
   };
 
   const toggleMaximize = () => {
-    setIsMaximized(!isMaximized());
+    if (isMaximized()) {
+      setIsMaximized(false);
+    } else {
+      setIsMaximized(true);
+    }
   };
 
   return (
