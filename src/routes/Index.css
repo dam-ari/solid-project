@@ -8,10 +8,11 @@
 }
 
 body {
-  background-image: url('https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/773ac512-567c-4316-81c9-511db0c8a094') no-repeat center center fixed;
-  background-size: cover;
+  /* background-image: url('https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/773ac512-567c-4316-81c9-511db0c8a094') no-repeat center center fixed;
+  background-size: cover; */
   height: 100vh;
   width: 100%;
+
 }
 
 .icon-container {

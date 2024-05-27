@@ -5,7 +5,6 @@ import IconBox from "~/components/IconBox";
 import { createSignal, For } from "solid-js";
 import { Show } from "solid-js/web";
 import { modals } from "~/data/modals";
-import "../styles/tailwind.css";
 
 export default function Home() {
   const [modal, setModal] = createSignal<string | null>(null);
@@ -33,17 +32,11 @@ export default function Home() {
   };
 
   return (
-    <main
-      class="bg-cover bg-center min-h-screen bg-fixed bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/773ac512-567c-4316-81c9-511db0c8a094')",
-      }}
-    >
+    <main class="bg-cover bg-center bg-fixed bg-no-repeat">
       <Title>Hello World</Title>
       <h1 class="text-4xl text-center text-white mt-8">Hello world!</h1>
       <Counter />
-      <p class="text-center text-white mt-4">Visit me</p>
+      <p class="text-center text-grey mt-4 ">Visit me</p>
       <section class="relative flex flex-col items-center justify-end h-full pb-8">
         <div class="flex space-x-4 p-4 bg-white bg-opacity-50 rounded-lg shadow-lg fixed-bottom">
           <For each={modals}>

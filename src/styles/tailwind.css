@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    /* background-color: antiquewhite; */
+    background-image: url('https://picsum.photos/1200/800');
+    background-size: cover;
+    backface-visibility: 0.5;
+
+}
+
 /* Ensure the buttons are fixed to the bottom */
 .fixed-bottom {
     position: fixed;
@@ -15,14 +24,15 @@
   
   /* Modal basic styles */
   .modal {
+
     position: fixed;
-    top: 10%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%, -10%);
-    width: 80%;
-    height: 70%;
+    width: 93%;
+    height: 75%;
     background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -54,6 +64,8 @@
     padding: 1rem;
     overflow-y: auto;
     max-height: calc(100% - 2.5rem);
+    background-color:  #c4c4c4a3;
+     /*  rgba(250, 235, 215, 0.517); */
   }
   
   /* macOS-style buttons */
