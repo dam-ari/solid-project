@@ -1,10 +1,19 @@
 body {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding-left: 1rem;
 }
 
 a {
   margin-right: 1rem;
+  font-size: smaller;
+  color: #335d92;
+  &:first-child {
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    text-shadow: 0 0 0.5rem #335d92;
+    border-radius: 0.5rem;
+    /* backdrop-filter: blur(10px); */
+  }
 }
 
 main {
