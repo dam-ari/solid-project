@@ -14,6 +14,7 @@ export default function App() {
           <div class="mb-1 bg-gray-200 px-1">
             <a href="/">Index</a>
             <a href="/about">About</a>
+            <a href="/fun">🪽</a>
           </div>
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
