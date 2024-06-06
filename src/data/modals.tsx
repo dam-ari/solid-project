@@ -3,6 +3,7 @@ import AboutModal from "~/components/modals/AboutModal";
 import ProjectsModal from "~/components/modals/ProjectsModal";
 import TestimonialsModal from "~/components/modals/TestimonialsModal";
 import ContactModal from "~/components/modals/ContactModal";
+import EmojiParade from "~/components/modals/EmojiParade";
 
 interface ModalProps {
   id: string;
@@ -35,5 +36,11 @@ export const modals: ModalProps[] = [
     icon: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
     title: "Contact",
     component: ContactModal,
+  },
+  {
+    id: "emoji",
+    icon: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
+    title: "Parade",
+    component: EmojiParade,
   },
 ];
