@@ -1,8 +1,9 @@
-import { createEffect, createSignal } from "solid-js";
+import { createEffect, createSignal, onCleanup } from "solid-js";
+import "./EmojiAnimator.css";
 
 export type EmojiArray = {
-    name: string;
-    description: string;
+    name?: string;
+    description?: string;
     emojis: string[];
     size?: string;
     duration?: number;
@@ -10,32 +11,43 @@ export type EmojiArray = {
 };
 
 const EmojiAnimator = (props: EmojiArray) => {
-    const [currentEmoji, setCurrentEmoji] = createSignal(props.emojis[0]);
+    const { emojis = [], duration = 5000, onAnimationEnd, size = "2em" } = props;
+    const [currentEmoji, setCurrentEmoji] = createSignal(emojis[0] || "");
+    const [currentSet, setCurrentSet] = createSignal(emojis);
+    let intervalId: number;
 
-    // Effect to handle the emoji animation
     createEffect(() => {
+
+        clearInterval(intervalId);
+        console.log("Initializing EmojiAnimator with emojis:", emojis);
+        setCurrentSet(emojis);
         let currentIndex = 0;
-        const { emojis, duration = 5000, onAnimationEnd } = props;
 
-        const interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % emojis.length;
-            setCurrentEmoji(emojis[currentIndex]);
+        intervalId = setInterval(() => {
+            const current = currentSet();
+            const len = current.length;
+            if (len > 0) {
+                currentIndex = (currentIndex + 1) % len;
+                setCurrentEmoji(currentSet()[currentIndex]);
 
-            if (currentIndex === emojis.length - 1 && onAnimationEnd) {
-                onAnimationEnd();
+                if (currentIndex === len - 1 && onAnimationEnd) {
+                    onAnimationEnd();
+                }
             }
-        }, duration / emojis.length);
+        }, duration / (currentSet().length || 1));
 
-        return () => clearInterval(interval);
-    });
+        // onCleanup(() => {
+        //     clearInterval(interval);
+        //     console.log("Clearing interval");
+        // });
 
-    // Effect to update the current emoji when the emojis prop changes
-    createEffect(() => {
-        setCurrentEmoji(props.emojis[0]);
+        setCurrentEmoji(emojis[0] || "");
+
+        return () => clearInterval(intervalId); // Ensure cleanup
     });
 
     return (
-        <div class="emoji-animator" style={{ "font-size": props.size }}>
+        <div class="emoji-animator" style={{ "font-size": size }}>
             <span>{currentEmoji()}</span>
         </div>
     );
