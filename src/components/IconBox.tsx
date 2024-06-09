@@ -6,6 +6,10 @@ interface IconBoxProps {
   onClick: (modalId: string) => void;
 }
 
+const isSvgIcon = (icon: string): boolean => {
+  return icon.trim().startsWith("<svg");
+};
+
 const IconBox: Component<IconBoxProps> = ({ icon, modalId, onClick }) => {
   return (
     <div
@@ -15,16 +19,20 @@ const IconBox: Component<IconBoxProps> = ({ icon, modalId, onClick }) => {
         onClick(modalId);
       }}
     >
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d={icon} stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
+      {isSvgIcon(icon) ? (
+        <div innerHTML={icon} class="w-8 h-8"></div>
+      ) : (
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d={icon} stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      )}
     </div>
   );
 };

@@ -12,6 +12,31 @@ interface ModalProps {
   component: () => JSX.Element;
 }
 
+const emojiParadeIcon = `
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun -->
+  <circle cx="32" cy="32" r="10" fill="#FFEB3B"/>
+  <path d="M32 2v8M32 54v8M62 32h-8M10 32H2M48.8 15.2l-5.6 5.6M15.2 48.8l5.6-5.6M48.8 48.8l-5.6-5.6M15.2 15.2l5.6 5.6" stroke="#FFEB3B" stroke-width="2"/>
+  <!-- Three emojis -->
+  <circle cx="16" cy="48" r="6" fill="#FFD700"/>
+  <circle cx="48" cy="48" r="6" fill="#FFD700"/>
+  <circle cx="32" cy="48" r="6" fill="#FFD700"/>
+  <!-- Faces -->
+  <!-- Left Emoji Face -->
+  <circle cx="14" cy="46" r="1" fill="#000"/>
+  <circle cx="18" cy="46" r="1" fill="#000"/>
+  <path d="M14 50c2 1.5 4 1.5 6 0" stroke="#000" stroke-width="1"/>
+  <!-- Center Emoji Face -->
+  <circle cx="30" cy="46" r="1" fill="#000"/>
+  <circle cx="34" cy="46" r="1" fill="#000"/>
+  <path d="M30 50c2 1.5 4 1.5 6 0" stroke="#000" stroke-width="1"/>
+  <!-- Right Emoji Face -->
+  <circle cx="46" cy="46" r="1" fill="#000"/>
+  <circle cx="50" cy="46" r="1" fill="#000"/>
+  <path d="M46 50c2 1.5 4 1.5 6 0" stroke="#000" stroke-width="1"/>
+</svg>
+`;
+
 export const modals: ModalProps[] = [
   {
     id: "about",
@@ -39,7 +64,7 @@ export const modals: ModalProps[] = [
   },
   {
     id: "emoji",
-    icon: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
+    icon: emojiParadeIcon,
     title: "Parade",
     component: EmojiParade,
   },
