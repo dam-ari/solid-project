@@ -27,10 +27,10 @@ export const createGif = async (
       const span = document.createElement("span");
       span.textContent = emoji;
       span.style.fontSize = size;
-      span.style.lineHeight = "3em"; // Adjust line height
-      span.style.display = "inline-block"; // Ensure proper sizing
+      span.style.lineHeight = size; // Adjust line height
+      //   span.style.display = "inline-block"; // Ensure proper sizing
       span.style.verticalAlign = "middle"; // Align vertically
-      span.style.padding = "0 0.5em"; // Add padding
+      span.style.padding = "0 0.2em"; // Add padding
 
       offscreenDiv.innerHTML = "";
       offscreenDiv.appendChild(span);
@@ -70,10 +70,13 @@ export const createGif = async (
   }
 };
 
-export const downloadGif = (url: string) => {
+export const downloadGif = (
+  url: string,
+  title: string = "emoji-animation.gif"
+) => {
   const a = document.createElement("a");
   a.href = url;
-  a.download = "emoji-animation.gif";
+  a.download = title;
   a.style.display = "none";
   document.body.appendChild(a);
   a.click();
@@ -83,7 +86,8 @@ export const downloadGif = (url: string) => {
 export const handleCopy = async (
   emojis: string[],
   size: string,
-  duration: number
+  duration: number,
+  title?: string
 ) => {
   const animatorElement = document.querySelector(".emoji-animator");
   if (!animatorElement) {
@@ -91,7 +95,7 @@ export const handleCopy = async (
     return;
   }
 
-  alert("Creating GIF...");
+  //   alert("Creating GIF...");
 
   try {
     const url = await createGif(
@@ -100,8 +104,8 @@ export const handleCopy = async (
       size || "3em",
       duration || 4000
     );
-    alert("GIF created successfully. Downloading...");
-    downloadGif(url);
+    // alert("GIF created successfully. Downloading...");
+    downloadGif(url, title);
   } catch (error) {
     alert("Error creating GIF: " + error);
     console.error("Error creating GIF:", error);
