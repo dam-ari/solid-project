@@ -18,13 +18,13 @@ const EmojiParade = () => {
     };
 
     const handleCopyGif = async () => {
-        const { emojis, size, duration, name } = sequence();
+        const { emojis, size, duration, name, fadeIn = false } = sequence();
         const animatorElement = document.querySelector('.emoji-animator');
         if (!animatorElement) return;
 
         setIsLoading(true); // Start loading
         try {
-            await handleCopy(emojis, size, duration, name);
+            await handleCopy(emojis, size, duration, name, fadeIn);
             // alert("GIF created successfully.");
         } catch (error) {
             alert("Error creating GIF: " + error);

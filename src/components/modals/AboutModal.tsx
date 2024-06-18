@@ -14,11 +14,10 @@ const AboutModal = (): JSX.Element => {
       <div>
         <h1 class="text-3xl mb-2">Holy me</h1>
         <p>
-          I'm a front-end developer. I have dedicated myself to creating
-          visually appealing and user-friendly websites. I'm always open to
-          using new skill sets and I believe in the power of collaboration,
-          working closely with designers and back-end developers to deliver
-          cohesive and effective solutions.
+          I'm a software engineer, writer, and creator. I love building
+          applications, writing about software development, and sharing what I
+          know with others. I'm passionate about learning and teaching, and I
+          enjoy collaborating with others to build great products.
         </p>
       </div>
     </>
