@@ -1,5 +1,6 @@
 import { Title } from "@solidjs/meta";
 import EmojiAnimator, { EmojiArray } from "~/components/EmojiAnimator";
+import Carousel from "~/components/Carousel";
 
 export default function Home() {
   let sequence: EmojiArray = {
@@ -13,6 +14,11 @@ export default function Home() {
     size: "2em",
     duration: 3000,
   };
+
+  let images = [{ src: "https://picsum.photos/1200/800", alt: "Random Image" },
+  { src: "https://picsum.photos/1000/800", alt: "Random Image" },
+  { src: "https://picsum.photos/1000/800", alt: "Random Image" }];
+
   return (
 
     <main>
@@ -24,7 +30,10 @@ export default function Home() {
       <div class="bg-emerald-500 w-20 rounded flex h-10 px-2 inline-flex">
         <EmojiAnimator emojis={["_", " ", "_", " ", "_", "a ", "a_", "ab ", "ab_", "abc ", "abc_"]}
           size={sequence.size} duration={sequence.duration} fadeIn={true} reverseLoop={true} />
+      </div>
 
+      <div class="test bg-gray-200  rounded-xl  inline-flex" >
+        <Carousel images={images} />
       </div>
     </main>
   );

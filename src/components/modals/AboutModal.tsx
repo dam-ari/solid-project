@@ -14,10 +14,7 @@ const AboutModal = (): JSX.Element => {
       <div>
         <h1 class="text-3xl mb-2">Holy me</h1>
         <p>
-          I'm a software engineer, writer, and creator. I love building
-          applications, writing about software development, and sharing what I
-          know with others. I'm passionate about learning and teaching, and I
-          enjoy collaborating with others to build great products.
+
         </p>
       </div>
     </>

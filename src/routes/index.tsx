@@ -5,10 +5,12 @@ import IconBox from "~/components/IconBox";
 import { createSignal, For } from "solid-js";
 import { Show } from "solid-js/web";
 import { modals } from "~/data/modals";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   const [modal, setModal] = createSignal<string | null>(null);
   const [isMaximized, setIsMaximized] = createSignal(false);
+
 
   const openModal = (modalId: string) => {
     console.log(`Opening modal: ${modalId}`);
@@ -33,12 +35,15 @@ export default function Home() {
 
   return (
     <main class="bg-cover bg-center bg-fixed bg-no-repeat">
-      <Title>Hello World</Title>
-      <h1 class="text-4xl text-center text-white mt-8">Hello world!</h1>
-      <Counter />
-      <p class="text-center text-grey mt-4 ">Visit me</p>
-      <section class="relative flex flex-col items-center justify-end h-full pb-8">
-        <div class="flex space-x-4 p-2 bg-white bg-opacity-50 rounded-lg shadow-lg fixed-bottom scale">
+      <Show when={!modal()}>
+        <Title>Home</Title>
+        <h1 class="p-3">Home</h1>
+        <Carousel images={[{ src: "https://picsum.photos/1200/800", alt: "Random Image" },
+        { src: "https://picsum.photos/1000/800", alt: "Random Image" },
+        { src: "https://picsum.photos/1200/900", alt: "Random Image" }]} />
+      </Show>
+      <section class="relative flex flex-col items-center justify-end h-full pb-2">
+        <div class="flex p-2 bg-white bg-opacity-50 rounded-lg shadow-lg fixed-bottom scale icon-container">
           <For each={modals}>
             {(modalProps) => (
               <IconBox
@@ -60,7 +65,7 @@ export default function Home() {
                 closeModal={closeModal}
                 toggleMaximize={toggleMaximize}
               >
-                <div class="p-4">{modalProps.component()}</div>
+                <div class="p-2">{modalProps.component()}</div>
               </Modal>
             </Show>
           )}

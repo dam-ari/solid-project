@@ -5,7 +5,7 @@
 
 body {
     background-color: antiquewhite;
-    background-image: url('https://picsum.photos/1200/800');
+    /* background-image: url('https://picsum.photos/1200/800'); */
     background-size: cover;
     backface-visibility: 0.5;
 
@@ -126,3 +126,9 @@ body {
     overflow: hidden;
   }
   
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }

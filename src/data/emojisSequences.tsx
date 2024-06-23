@@ -490,8 +490,8 @@ export const emojiSequences: EmojiArray[] = [
             "                 🌆",
             "                  🌄"
         ],
-        size: "2em",
-        duration: 3000,
+        size: "5em",
+        duration: 2000,
     },
     {
         name: "Racing Car",
