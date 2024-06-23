@@ -53,7 +53,7 @@ const Carousel = (props: { images: { src: string; alt: string; }[] }): JSX.Eleme
         {`
           .card {
             align-content: space-around;
-            background: linear-gradient(90deg, #ff005282, #0265a1db);
+            background: linear-gradient(45deg, #ff005282, #0265a1db);
             background-size: 200% 200%;
             animation: gradientAnimation 5s linear infinite;
           }

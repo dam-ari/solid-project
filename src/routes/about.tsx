@@ -32,9 +32,7 @@ export default function Home() {
           size={sequence.size} duration={sequence.duration} fadeIn={true} reverseLoop={true} />
       </div>
 
-      <div class="test bg-gray-200  rounded-xl  inline-flex" >
-        <Carousel images={images} />
-      </div>
+
     </main>
   );
 }
